@@ -21,9 +21,9 @@
 
         &__title {
             @include font(3.3rem, 100, 4.2rem, 0.09rem);
+            margin-top: 40px;
             max-width: 630px;
             text-align: center;
-            margin-top: 40px;
         }
 
         &__icon {
@@ -31,19 +31,27 @@
             margin-top: 40px;
         }
 
+        &__icon:hover {
+            cursor: pointer;
+        }
+
         &__button {
             @include font(0.87rem, 400, 2.81rem, 0.175rem);
+            margin-top: 20px;
             width: 169px;
             background-color: $secondary-color;
             text-align: center;
-            color: $main-color;
             text-transform: uppercase;
-            margin-top: 20px;
+            color: $main-color;
+        }
+
+        &__button:hover {
+            @include button-hover;
         }
 
         &__reference {
             @include font(0.75rem, 400, 2.81rem, 0.03rem);
-            color: #282828;
+            color: $text_main-color;
         }
     }
 }
@@ -76,19 +84,19 @@
 
         &__wrapper {
             @include flexbox(row, space-between, center);
-            width: 58%;
-            background-color: $main-color;
-            max-width: 85%;
             margin: 0 auto;
+            width: 58%;
+            max-width: 85%;
+            background-color: $main-color;
         }
 
         &__laptop {
             position: absolute;
+            top: 50%;
+            left: 3%;
+            transform: translateY(-50%);
             max-width: 45%;
             height: auto;
-            left: 3%;
-            top: 50%;
-            transform: translateY(-50%);
         }
     }
 
@@ -100,8 +108,8 @@
 
     &__content {
         @include flexbox(column, center, stretch);
-        max-width: 67%;
         margin: 0 auto;
+        max-width: 67%;
 
         &__name {
             @include font(0.87rem, 500, 2.75rem, 0.175rem);
@@ -111,8 +119,8 @@
 
         &__title {
             @include font(2.06rem, 500, 2.75rem, 0.09rem);
-            max-width: 94%;
             margin-bottom: 25px;
+            max-width: 94%;
 
             &--small {
                 max-width: 76%;
@@ -120,8 +128,8 @@
 
             &__dots {
                 @include font(2rem, 400, 1.56rem, 0.22rem);
-                color: $secondary-color;
                 letter-spacing: 3.5px;
+                color: $secondary-color;
             }
         }
 
@@ -161,15 +169,17 @@
 
 .content {
     @include flexbox;
-    background: url('../img/background-middle.png') top center / cover no-repeat;
-    height: 85vh;
     position: relative;
+    height: 85vh;
+    background: url('../img/background-middle.png') top center / cover no-repeat;
+
+
 
     &--black {
         @include flexbox(column, center, stretch);
         height: 80vh;
         background: url('../img/background_figures.png') center center / cover no-repeat;
-        background-color: $text_secondary-color;
+        background-color: $text_main-color;
     }
 
     &__penholder {
@@ -192,8 +202,8 @@
 
     &__wrapper {
         @include flexbox(column, flex-end, center);
-        max-width: 78%;
         margin: 0 auto;
+        max-width: 78%;
 
         &--black {
             align-items: stretch;
@@ -209,8 +219,8 @@
 
         &__name {
             @include font(0.87rem, 500, 1.88rem, 0.175rem);
-            color: $secondary-color;
             text-transform: uppercase;
+            color: $secondary-color;
         }
 
         &__title {
@@ -229,14 +239,14 @@
         max-width: 90%;
 
         &--black {
-            max-width: 100%;
             margin-top: 0;
             margin-bottom: 100px;
+            max-width: 100%;
         }
 
         &__article {
-            text-align: center;
             margin-right: 20px;
+            text-align: center;
 
             &__title {
                 @include font(1.19rem, 500, 2.75rem, 0.05rem);
@@ -247,9 +257,9 @@
             }
 
             &__subtitle {
-                color: $secondary-color;
                 @include font(0.87rem, 500, 0.31rem, normal);
                 margin-bottom: 30px;
+                color: $secondary-color;
             }
 
             &__text {
@@ -271,8 +281,8 @@
     }
 
     &__image {
-        width: 73%;
         margin-top: 75px;
+        width: 73%;
     }
 }
 
@@ -281,8 +291,8 @@
 }
 
 .article {
-    background-color: #323969;
     padding: 65px 0;
+    background-color: $article-background-color;
 
     &__wrapper {
         @include flexbox(column, space-around, center);
@@ -308,16 +318,16 @@
         }
 
         &__input {
+            border: 1px solid $main-color;
             width: 22%;
             height: 44px;
-            background-color: #464d78;
-            border: 1px solid $main-color;
+            background-color: $input-background-color;
 
             &::placeholder {
                 @include font(0.8rem, 400, 1.56rem, 0.03rem);
-                color: $main-color;
                 padding-left: 15px;
                 text-transform: uppercase;
+                color: $main-color;
             }
 
             &--white {
@@ -338,19 +348,23 @@
 
         &__button {
             @include font(0.8rem, 400, 1.56rem, 0.03rem);
+            border: 1px solid $secondary-color;
             width: 100%;
             height: 44px;
-            border: 1px solid $secondary-color;
             background-color: $secondary-color;
-            color: $main-color;
             text-transform: uppercase;
+            color: $main-color;
+        }
+
+        &__button:hover {
+            @include button-hover;
         }
     }
 
     &__footer {
         @include font(0.8rem, 400, 1.56rem, 0.04rem);
-        color: $main-color;
         margin-top: 30px;
+        color: $main-color;
 
         &__paragraph {
             text-decoration: underline;
@@ -362,17 +376,17 @@
     height: 40vh;
 
     &__wrapper {
-        height: 100%;
         display: flex;
         flex-direction: row;
+        height: 100%;
     }
 
     &__content {
         @include flexbox(row, space-around, center);
-        width: 77%;
-        background-color: $article-secondary-color;
         margin: 0 auto;
         padding-left: 50px;
+        width: 77%;
+        background-color: $article-secondary-color;
 
         &__first {
             width: 24%;
@@ -409,29 +423,37 @@
 
             &__submit {
                 @include flexbox(row, center, stretch);
-                width: 100%;
                 margin-bottom: 30px;
+                width: 100%;
 
                 &__button {
-                    height: 44px;
                     width: 20%;
+                    height: 44px;
                     background: url('../img/footer_button_icon.png') center center / contain no-repeat;
                     background-size: 23px;
-                    background-color: #ff6d6d;
+                    background-color: $secondary-color;
+                }
+
+                &__button:hover {
+                    @include button-hover;
                 }
             }
 
             &__images {
                 @include flexbox(row, space-around, stretch);
-                width: 60%;
                 margin: 0 auto;
+                width: 60%;
+            }
+
+            &__images:hover {
+                cursor: pointer;
             }
         }
     }
 
     &__article {
         width: 23%;
-        background: linear-gradient(to right top, #ececec 50%, rgba(255, 109, 109, 0.8) 50%);
+        background: linear-gradient(to right top, $article-secondary-color 50%, $secondary-color 50%);
     }
 }
 

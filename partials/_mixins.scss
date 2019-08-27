@@ -11,3 +11,8 @@
     line-height: $height;
     letter-spacing: $spacing;
 }
+
+@mixin button-hover {
+    cursor: pointer;
+    background-color: $secondary-color-hover;
+}
